@@ -1,4 +1,15 @@
-torchrun --nproc_per_node=8 offline_train_ARC.py \
+#!/bin/bash
+#SBATCH --job-name=test
+#SBATCH --output=job_output.txt
+#SBATCH --error=job_error.txt
+#SBATCH --ntasks=1
+#SBATCH --time=10:00
+#SBATCH --mem=32Gb
+#SBATCH --gres=gpu:1
+#SBATCH --partition=main 
+
+
+uv run torchrun --nproc_per_node=1 offline_train_ARC.py \
   --epochs 100 \
   --depth 10 \
   --batch-size 32 \

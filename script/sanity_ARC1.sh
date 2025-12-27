@@ -1,6 +1,6 @@
 file_name="0607ce86"
 
-python test_time_train_ARC.py \
+uv run test_time_train_ARC.py \
           --epochs 100 \
           --depth 10 \
           --batch-size 8 \
